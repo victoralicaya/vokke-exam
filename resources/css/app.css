@@ -123,6 +123,12 @@ body {
     cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+    .failed {
+        margin-top: 5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .sidenav {
         width: 100%;
@@ -137,10 +143,6 @@ body {
 
     .main {
         margin-left: 0;
-    }
-
-    .failed {
-        margin-top: 5rem;
     }
 
     #datacontainer {
