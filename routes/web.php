@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KangaroosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [KangaroosController::class, 'index'])->name('index');
+Route::get('/create-kangaroo', [KangaroosController::class, 'create'])->name('create');
+Route::get('/update-kangaroo/{id}', [KangaroosController::class, 'edit'])->name('update');

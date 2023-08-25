@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\KangaroosApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/all-kangaroos', [KangaroosApiController::class, 'index'])->name('index.data');
+Route::get('/kangaroo/{kangaroo}', [KangaroosApiController::class, 'show'])->name('show.data');
+Route::post('/add-kangaroo', [KangaroosApiController::class, 'store'])->name('store.data');
+Route::put('/edit-kangaroo/{kangaroo}', [KangaroosApiController::class, 'update'])->name('update.data');

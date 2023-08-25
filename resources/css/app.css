@@ -1,0 +1,161 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+.sidenav {
+    min-height: -webkit-fill-available;
+    width: 10rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0e0d36;
+    overflow-x: hidden;
+    padding-top: 1.3rem;
+}
+
+.sidenav a {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 10rem;
+    padding: 0 0.5rem;
+    min-height: -webkit-fill-available;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    border: 1px solid #acabab;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+
+.group {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.9rem;
+}
+
+.group label {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.group input, .group select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+    border: 1px solid #818181;
+    border-radius: 5px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.btn-submit {
+    border: 1px solid #0e0d36;
+    border-radius: 0.2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #0e0d36;
+    color: #fff;
+    cursor: pointer;
+}
+
+.success {
+    width: 36rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #09a309;
+    border: 1px solid #046e04;
+    color: #fff;
+    border-radius: 0.3rem;
+}
+
+.failed {
+    width: 36rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #ad0b0b;
+    border: 1px solid #6e0404;
+    color: #fff;
+    border-radius: 0.3rem;
+    margin-top: 5rem;
+}
+
+.input-error {
+    color: #f54a4a;
+    font-size: 0.8rem;
+}
+
+.datacontainer {
+    display: flex;
+    justify-content: center;
+}
+
+#datacontainer {
+    margin-top: 2rem;
+    width: 80%;
+}
+
+.dx-row {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 0.8rem 0;
+    }
+
+    .sidenav a {
+        float: left;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    #datacontainer {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .form-container {
+        width: 21rem;
+    }
+
+    .success {
+        width: 22rem;
+    }
+
+    .failed {
+        width: 22rem;
+    }
+}
+
