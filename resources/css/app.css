@@ -102,7 +102,6 @@ body {
     border: 1px solid #6e0404;
     color: #fff;
     border-radius: 0.3rem;
-    margin-top: 5rem;
 }
 
 .input-error {
@@ -138,6 +137,10 @@ body {
 
     .main {
         margin-left: 0;
+    }
+
+    .failed {
+        margin-top: 5rem;
     }
 
     #datacontainer {
