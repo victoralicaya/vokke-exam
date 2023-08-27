@@ -5,8 +5,6 @@ $(document).ready(function () {
 
         const id = $('#kangaroo-id').val();
 
-        console.log('ID: ' + id);
-
         const name = $('#name').val();
         const nickname = $('#nickname').val();
         const weight = $('#weight').val();
@@ -56,15 +54,8 @@ $(document).ready(function () {
                     $('#friendliness').val('');
                     $('#birthday').val('');
                 }
-                $.each(errors.responseJSON.errors, function (field, errorMessages) {
-                    var errorMessage = errorMessages[0];
-                    $('#' + field + '-error').text(errorMessage);
-                });
             },
             error: function (errors) {
-                console.error(errors.responseJSON.message);
-                console.error(errors.responseJSON.errors);
-
                 $('#notif').fadeIn().addClass('failed');
                 $('#notif-text').text(errors.responseJSON.message);
 
