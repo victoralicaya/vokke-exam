@@ -43,8 +43,9 @@ $(document).ready(function () {
             type: type,
             data: data,
             success: function (response) {
-                $('#notif').fadeIn().addClass('success');
+                $('#notif').fadeIn().removeClass('failed').addClass('success');
                 $('#notif-text').text(response.message + '. You can now go back to the homepage.');
+                clearErrorMessages();
                 if (id == undefined) {
                     $('#name').val('');
                     $('#nickname').val('');
@@ -55,6 +56,10 @@ $(document).ready(function () {
                     $('#friendliness').val('');
                     $('#birthday').val('');
                 }
+                $.each(errors.responseJSON.errors, function (field, errorMessages) {
+                    var errorMessage = errorMessages[0];
+                    $('#' + field + '-error').text(errorMessage);
+                });
             },
             error: function (errors) {
                 console.error(errors.responseJSON.message);
@@ -76,7 +81,6 @@ $(document).ready(function () {
         method: 'GET',
         dataType: 'json',
         success: function (response) {
-            console.log(response.data);
             $('#datacontainer').dxDataGrid({
                 dataSource: response.data,
                 columns: [
@@ -114,4 +118,8 @@ $(document).ready(function () {
             console.error(error);
         }
     });
+
+    function clearErrorMessages() {
+        $("[id$='-error']").text('');
+    }
 });
